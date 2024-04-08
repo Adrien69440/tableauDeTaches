@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Tâches</title>
+    <link rel="stylesheet" href="./style/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+  <div class="containeur">
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Tâche</th>
+                <th>Responsable</th>
+                <th>Statut</th>
+            </tr>
+        </thead>
+        <tbody id="taskTableBody">
+        </tbody>
+    </table>
+    <div>
+        <label for="timeInput">Date :</label>
+        <input type="text" id="timeInput">
+        <label for="taskInput">Tâche :</label>
+        <input type="text" id="taskInput">
+        <label for="responsibleInput">Responsable :</label>
+        <input type="text" id="responsibleInput">
+        <label for="statusInput">Statut :</label>
+        <input type="text" id="statusInput">
+        <button onclick="addTask()">Ajouter Tâche</button>
+    </div>
+</div>
+    <script src="./js/script.js"defer></script>
+</body>
+</html>
+
+
+

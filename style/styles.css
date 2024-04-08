@@ -1,0 +1,45 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    background-color:rgb(223, 243, 223) ;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.task-done {
+    background-color: #d3d3d3; /* Couleur de fond pour les tâches terminées */
+}
+
+/* Define different colors for each status option */
+option[value="à faire"] { background-color: red; }
+option[value="en cours"] { background-color: yellow; }
+option[value="fait"] { background-color: green; }
+
+body{
+    background-color: rgb(231, 185, 225);
+}
+.containeur{
+
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+label{
+    background-color: aqua;
+}
+input{
+    /* background-color: red; */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow:  0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
