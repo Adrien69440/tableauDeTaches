@@ -6,7 +6,7 @@
     <title>Tableau de Tâches</title>
     <link rel="stylesheet" href="./style/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  
 </head>
 <body>
   <div class="containeur">
@@ -22,7 +22,7 @@
         <tbody id="taskTableBody">
         </tbody>
     </table>
-    <div>
+    <div class="containeurInput">
         <label for="timeInput">Date :</label>
         <input type="text" id="timeInput">
         <label for="taskInput">Tâche :</label>
@@ -31,10 +31,13 @@
         <input type="text" id="responsibleInput">
         <label for="statusInput">Statut :</label>
         <input type="text" id="statusInput">
-        <button onclick="addTask()">Ajouter Tâche</button>
     </div>
+        <!-- <button onclick="addTask()" class="btnAdd">Ajouter Tâche</button> -->
+        <button id="btnAdd" class="btnAdd">Ajouter Tâche</button>
+
 </div>
-    <script src="./js/script.js"defer></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="./js/script.js"defer></script>
 </body>
 </html>
 

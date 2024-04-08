@@ -12,21 +12,6 @@ function saveTasks(tasks) {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// Fonction pour ajouter une tâche
-function addTask() {
-    const time = document.getElementById("timeInput").value;
-    const task = document.getElementById("taskInput").value;
-    const responsible = document.getElementById("responsibleInput").value;
-    const status = document.getElementById("statusInput").value;
-    const id = tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1;
-
-    const newTask = { id, time, task, responsible, status };
-    tasks.push(newTask);
-    
-    saveTasks(tasks);
-    displayTasks();
-}
-
 // Fonction pour charger et afficher les tâches
 function displayTasks() {
     tasks = loadTasks(); // Charger les tâches depuis le localStorage
@@ -41,7 +26,6 @@ function displayTasks() {
             <td>${task.task}</td>
             <td>${task.responsible}</td>
             <td>${task.status}</td>
-            // <td><button onclick="editTask(${task.id})">Éditer</button></td>
             <td><button onclick="deleteTask(${task.id})">Supprimer</button></td>
         `;
         tableBody.appendChild(row);
@@ -81,13 +65,6 @@ function displayTasks() {
                 input.disabled = true;
                 cell.appendChild(input);
                 
-                // Configurer Flatpickr pour cette cellule
-                flatpickr(input, {
-                    enableTime: true,
-                    dateFormat: "Y-m-d H:i",
-                    disableMobile: true
-                  
-                });
             } else {
                 // Pour la colonne 'status', créer un menu déroulant
                 const select = document.createElement("select");
@@ -142,31 +119,62 @@ function displayTasks() {
 }
 
 
-function addTask() {
+
+// function addTask() {
+//     const timeInput = document.getElementById("timeInput");
+
+//     // Initialiser Flatpickr sur l'élément d'entrée de date
+//     flatpickr(timeInput, {
+//         enableTime: true, // Activer le choix de l'heure
+//         dateFormat: "Y-m-d H:i", // Format de date et heure
+//         disableMobile: true, // Désactiver sur les appareils mobiles
+//         onClose: function(selectedDates, dateStr, instance) {
+//             // Appeler la fonction pour ajouter la tâche une fois que la date est sélectionnée
+//             addTaskAfterDateSelection();
+//         }
+//     });
+// }
+
+// // Fonction pour ajouter la tâche après la sélection de la date
+// function addTaskAfterDateSelection() {
+//     const time = document.getElementById("timeInput").value;
+//     const task = document.getElementById("taskInput").value;
+//     const responsible = document.getElementById("responsibleInput").value;
+//     const status = document.getElementById("statusInput").value;
+//     const id = tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1;
+
+//     // Créer une nouvelle tâche avec les valeurs saisies
+//     const newTask = { id, time, task, responsible, status };
+
+//     // Ajouter la nouvelle tâche à la liste des tâches
+//     tasks.push(newTask);
+    
+//     // Enregistrer les données mises à jour dans le localStorage
+//     localStorage.setItem('tasks', JSON.stringify(tasks));
+    
+//     // Afficher les tâches mises à jour
+//     displayTasks();
+// }
+// Fonction pour ajouter une tâche après la sélection de la date
+function addTaskAfterDateSelection() {
     const time = document.getElementById("timeInput").value;
     const task = document.getElementById("taskInput").value;
     const responsible = document.getElementById("responsibleInput").value;
     const status = document.getElementById("statusInput").value;
     const id = tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1;
 
-    tasks.push({ id, time, task, responsible, status, done: false });
+    // Créer une nouvelle tâche avec les valeurs saisies
+    const newTask = { id, time, task, responsible, status };
+
+    // Ajouter la nouvelle tâche à la liste des tâches
+    tasks.push(newTask);
     
     // Enregistrer les données mises à jour dans le localStorage
     localStorage.setItem('tasks', JSON.stringify(tasks));
     
+    // Afficher les tâches mises à jour
     displayTasks();
 }
 
-
-
-function deleteTask(id) {
-    tasks = tasks.filter(task => task.id !== id);
-    
-    // Enregistrer les données mises à jour dans le localStorage
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-    
-    displayTasks();
-}
-
-displayTasks();
-
+// Écouter le clic sur le bouton Ajouter et appeler la fonction pour ajouter la tâche
+document.querySelector('.btnAdd').addEventListener('click', addTaskAfterDateSelection);

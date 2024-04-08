@@ -35,11 +35,32 @@ body{
 }
 
 label{
-    background-color: aqua;
+    background-color: black;
+    padding: 5px;
+    color:white;
+    border: 4px white solid;
 }
 input{
     /* background-color: red; */
     padding: 10px;
     border-radius: 5px;
-    box-shadow:  0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    /* box-shadow:  0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); */
+}
+
+.btnAdd{
+ border-radius: 15px ;
+ padding: 10px;
+ border: 2px solid;
+ width: 100%;
+ margin: 20px;
+}
+.btnAdd:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background-color: pink;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+}
+.containeurInput{
+    display: flex;
+
 }
