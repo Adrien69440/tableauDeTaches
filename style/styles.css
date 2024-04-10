@@ -30,8 +30,9 @@ input{
  border-radius: 15px ;
  padding: 10px;
  border: 2px solid;
- width: 100%;
- margin: 20px;
+ width: 80%;
+ margin: auto;
+ 
 }
 .btnAdd:hover{
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -39,10 +40,7 @@ input{
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
     cursor: pointer;
 }
-.containeurInput{
-    display: flex;
-    flex-direction: column;
-}
+
 
 select {
     background-color: rgb(236, 234, 234);
@@ -65,9 +63,15 @@ select {
 .containeur {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 70%;
+    margin: auto;
   }
-  
+  .containeurInput{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 70%;
+}
   
   table {
     width: 100%;

@@ -6,31 +6,34 @@
     <title>Tableau de Tâches</title>
     <link rel="stylesheet" href="./style/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
+   
+    
 </head>
 <body>
   <div class="containeur">
     <table>
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Tâche</th>
-                <th>Responsable</th>
-                <th>Statut</th>
-                <th>Supprimer</th>
+                <th>Date📅</th>
+                <th>Tâche✔️</th>
+                <th>Responsable:👩‍💼👨‍💼</th>
+                <th>Statut❌⏯️✅</th>
+                <th>Supprimer🗑️</th>
             </tr>
         </thead>
         <tbody id="taskTableBody">
         </tbody>
     </table>
     <div class="containeurInput">
-        <label for="timeInput">Date :</label>
+        <label for="timeInput">Date :📅</label>
         <input type="text" id="timeInput">
-        <label for="taskInput">Tâche :</label>
+        <label for="taskInput">Tâche :✔️</label>
         <input type="text" id="taskInput">
-        <label for="responsibleInput">Responsable :</label>
+        <label for="responsibleInput">Responsable :👩‍💼👨‍💼</label>
         <input type="text" id="responsibleInput">
-        <label for="statusInput">Statut :</label>
+        <label for="statusInput">Statut :❌⏯️✅</label>
         <input type="text" id="statusInput">
         <label for="sortBy">Trier par : </label>
         <select id="sortBy">

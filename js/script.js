@@ -75,7 +75,13 @@ const filteredTasks = tasks.filter(task => {
 
         const deleteButtonCell = document.createElement("td");
         const deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
+        const deleteIcon = document.createElement("i");
+
+        deleteButton.textContent = "j'en veux plus!!!";
+        deleteIcon.className = "fas fa-trash-alt";
+        deleteButton.appendChild(deleteIcon);
+
+        
         deleteButton.addEventListener('click', () => {
             tasks = tasks.filter(t => t.id !== task.id);
             localStorage.setItem('tasks', JSON.stringify(tasks));
