@@ -10,7 +10,11 @@ option[value="en cours"] { background-color: yellow; }
 option[value="fait"] { background-color: green; }
 
 body{
-    background-color: rgb(231, 185, 225);
+    /* background-color: rgb(231, 185, 225); */
+    background-image: url('../assets/pawel-czerwinski-LS0CWcXo1dw-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 label{
@@ -32,7 +36,7 @@ input{
  border: 2px solid;
  width: 80%;
  margin: auto;
- 
+
 }
 .btnAdd:hover{
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
