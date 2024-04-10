@@ -1,19 +1,4 @@
-table {
-    border-collapse: collapse;
-    width: 100%;
-  
-}
 
-th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-    background-color:rgb(223, 243, 223) ;
-}
-
-th {
-    background-color: #f2f2f2;
-}
 
 .task-done {
     background-color: #d3d3d3; /* Couleur de fond pour les tâches terminées */
@@ -26,12 +11,6 @@ option[value="fait"] { background-color: green; }
 
 body{
     background-color: rgb(231, 185, 225);
-}
-.containeur{
-
-    width: 90%;
-    margin: auto;
-    margin-top: 50px;
 }
 
 label{
@@ -62,5 +41,55 @@ input{
 }
 .containeurInput{
     display: flex;
-
+    flex-direction: column;
 }
+
+select {
+    background-color: rgb(236, 234, 234);
+    padding: 20px;
+    border-radius: 5px;
+}
+.red-background {
+    background-color: red;
+}
+
+.yellow-background {
+    background-color: yellow;
+}
+
+.green-background {
+    background-color: green;
+}
+
+/* Pour les écrans de taille normale */
+.containeur {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  table {
+    width: 100%;
+    /* max-width: 1200px; */
+    border-collapse: collapse;
+  }
+    
+
+th, td {
+    
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+    background-color:rgb(223, 243, 223) ;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+  
+/* th:nth-child(3),
+td:nth-child(3) {
+  display: none;
+   } */
+  

@@ -17,6 +17,7 @@
                 <th>Tâche</th>
                 <th>Responsable</th>
                 <th>Statut</th>
+                <th>Supprimer</th>
             </tr>
         </thead>
         <tbody id="taskTableBody">
@@ -31,13 +32,29 @@
         <input type="text" id="responsibleInput">
         <label for="statusInput">Statut :</label>
         <input type="text" id="statusInput">
+        <label for="sortBy">Trier par : </label>
+        <select id="sortBy">
+          <option value="date">Date</option>
+          <option value="status">Statut</option>
+          <option value="task">Tâche</option>
+        </select>
     </div>
-        <!-- <button onclick="addTask()" class="btnAdd">Ajouter Tâche</button> -->
+    <div<label for="filterStatus">Filtrer par statut : </label>
+    <select id="filterStatus">
+      <option value="all">Tous</option>
+      <option value="à faire">À faire</option>
+      <option value="en cours">En cours</option>
+      <option value="fait">Fait</option>
+    </select>
+    </div>
+    <!-- <button onclick="addTask()" class="btnAdd">Ajouter Tâche</button> -->
         <button id="btnAdd" class="btnAdd">Ajouter Tâche</button>
-
+        
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="./js/script.js"defer></script>
+<div id="notifications"></div>
+
 </body>
 </html>
 
