@@ -102,9 +102,44 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
-  
+.tableContent{
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+}
 /* th:nth-child(3),
 td:nth-child(3) {
   display: none;
    } */
-  
+   @media screen and (max-width: 765px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    th, td {
+        /* Afficher les données des cellules en ligne */
+        text-align: left;
+        /* Empêcher les cellules de dépasser de la largeur de l'écran */
+        word-wrap: break-word;
+    }
+    th {
+        /* Cacher les en-têtes de colonne (facultatif) */
+        display: none;
+    }
+    tr {
+        /* Ajouter une bordure en bas de chaque "ligne" pour la séparer visuellement des autres */
+        border-bottom: 1px solid #ddd;
+    }
+    tr:last-child {
+        /* Supprimer la bordure en bas de la dernière "ligne" */
+        border-bottom: none;
+    }
+    td:before {
+        /* Ajouter le nom de la colonne avant chaque donnée de cellule */
+        content: attr(data-label);
+        font-weight: bold;
+    }
+    td:first-child:before {
+        /* Ne pas ajouter le nom de la colonne avant la première cellule de chaque "ligne" */
+        content: "";
+    }
+}
