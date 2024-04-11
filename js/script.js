@@ -213,6 +213,14 @@ function checkTasks() {
     showNotification(message, "danger");
   }
 }
+const timeInput = document.getElementById("timeInput");
+
+flatpickr(timeInput, {
+  enableTime: true,
+  dateFormat: "Y-m-d H:i",
+  defaultDate: new Date(),
+  minuteIncrement: 1,
+});
 
 // function checkTasks() {
 //   const today = new Date();
