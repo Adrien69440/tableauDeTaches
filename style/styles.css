@@ -10,7 +10,7 @@ option[value="en cours"] { background-color: yellow; }
 option[value="fait"] { background-color: green; }
 
 body{
-    /* background-color: rgb(231, 185, 225); */
+    width: 100%;
     background-image: url('../assets/pawel-czerwinski-LS0CWcXo1dw-unsplash.jpg');
     background-size: cover;
     background-position: center;
@@ -115,6 +115,12 @@ td:nth-child(3) {
     table, thead, tbody, th, td, tr {
         display: block;
     }
+    .containeur {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+      }
     th, td {
         /* Afficher les données des cellules en ligne */
         text-align: left;
