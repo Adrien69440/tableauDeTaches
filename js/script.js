@@ -94,7 +94,7 @@ const filteredTasks = tasks.filter(task => {
         tableBody.appendChild(row);
     });
 }
-
+// 
 // // Fonction pour ajouter une tâche après la sélection de la date
 function addTaskAfterDateSelection() {
     const time = document.getElementById("timeInput").value;
@@ -115,6 +115,7 @@ function addTaskAfterDateSelection() {
     // Afficher les tâches mises à jour
     displayTasks();
 }
+
 
 // // Écouter le clic sur le bouton Ajouter et appeler la fonction pour ajouter la tâche
 
@@ -247,3 +248,148 @@ flatpickr(timeInput, {
 
 // Vérifier les tâches toutes les 5 minutes
 setInterval(checkTasks, 1 * 60* 1000);
+
+
+
+
+
+// *********************************************************************
+// *********************************************************************
+// *****************TEST************************************************
+
+
+// function displayTasks() {
+  //   const tableBody = document.getElementById("taskTableBody");
+  
+  //   // Filtrer les tâches en fonction du statut sélectionné
+  //   const filteredTasks = tasks.filter(task => {
+  //     const filterStatus = document.getElementById("filterStatus").value;
+  //     return filterStatus === "all" || task.status === filterStatus;
+  //   });
+  
+  //   // Effacer le contenu existant du tableau
+  //   while (tableBody.firstChild) {
+  //     tableBody.removeChild(tableBody.firstChild);
+  //   }
+  
+  //   // Ajouter ou mettre à jour les lignes de tâches dans le tableau
+  //   filteredTasks.forEach(task => {
+  //     const row = document.createElement("tr");
+  
+  //     const properties = ['time', 'task', 'responsible', 'status'];
+  //     properties.forEach(prop => {
+  //       const cell = document.createElement("td");
+  
+  //       // Créer un champ d'entrée régulier pour les autres colonnes
+  //       if (prop !== 'time' && prop !== 'status') {
+  //         const input = document.createElement("input");
+  //         input.value = task[prop];
+  //         input.disabled = true;
+  //         cell.appendChild(input);
+  //       } else if (prop === 'time') {
+  //         // Pour la colonne 'time', créer un champ de date avec Flatpickr
+  //         const input = document.createElement("input");
+  //         input.value = task[prop];
+  //         input.disabled = true;
+  //         cell.appendChild(input);
+  
+  //       } else {
+  //         // Pour la colonne 'status', créer un menu déroulant
+  //         const select = document.createElement("select");
+  
+  //         // Définir les options de statut avec les couleurs correspondantes
+  //         const statusOptions = [
+  //           { text: 'À faire', value: 'à faire', color: 'red' },
+  //           { text: 'En cours', value: 'en cours', color: 'yellow' },
+  //           { text: 'Fait', value: 'fait', color: 'green' }
+  //         ];
+  //         statusOptions.forEach(option => {
+  //           const optionElement = document.createElement("option");
+  //           optionElement.textContent = option.text;
+  //           optionElement.value = option.value;
+  //           optionElement.style.backgroundColor = option.color;
+  //           select.appendChild(optionElement);
+  //         });
+  
+  //         // Définir la valeur initiale du menu déroulant
+  //         select.value = task[prop];
+  
+  //         // Ajouter un gestionnaire d'événements pour mettre à jour la couleur de fond de la cellule
+  //         select.addEventListener('change', () => {
+  //           const selectedOption = select.options[select.selectedIndex];
+  //           cell.style.backgroundColor = selectedOption.style.backgroundColor;
+  //           task[prop] = select.value;
+  //           task[prop + 'Color'] = selectedOption.style.backgroundColor; // Ajouter la couleur de fond à l'objet de tâche
+  //           localStorage.setItem('tasks', JSON.stringify(tasks)); // Enregistrer les tâches mises à jour dans le localStorage
+  //         });
+  
+  //         cell.appendChild(select);
+  //       }
+  
+  //       row.appendChild(cell);
+  //     });
+  
+  //     const deleteButtonCell = document.createElement("td");
+  //     const deleteButton = document.createElement("button");
+  //     const deleteIcon = document.createElement("i");
+  
+  //     deleteButton.textContent = "Supprimer";
+  //     deleteIcon.className = "fas fa-trash-alt";
+  //     deleteButton.appendChild(deleteIcon);
+  
+  //     deleteButton.addEventListener('click', () => {
+  //       tasks = tasks.filter(t => t.id !== task.id);
+  //       localStorage.setItem('tasks', JSON.stringify(tasks));
+  //       displayTasks();
+  //     });
+  
+  //     deleteButtonCell.appendChild(deleteButton);
+  
+  //     const editButtonCell = document.createElement("td");
+  //     const editButton = document.createElement("button");
+  //     const editIcon = document.createElement("i");
+  
+  //     editButton.textContent = "Modifier";
+  //     editIcon.className = "fas fa-edit";
+  //     editButton.appendChild(editIcon);
+  
+  //     editButton.addEventListener("click", () => {
+  //       document.getElementById("timeInput").value = task.time;
+  //       document.getElementById("taskInput").value = task.task;
+  //       document.getElementById("responsibleInput").value = task.responsible;
+  //       document.getElementById("statusInput").value = task.status;
+  
+  //       tasks = tasks.filter(t => t.id !== task.id); // Supprimer la tâche existante
+  //       addTaskAfterDateSelection(); // Ajouter la tâche modifiée
+  //     });
+  
+  //     editButtonCell.appendChild(editButton);
+  
+  //     row.appendChild(deleteButtonCell);
+  //     row.appendChild(editButtonCell);
+  
+  //     tableBody.appendChild(row);
+  //   });
+  // }
+  
+
+  // function addTaskAfterDateSelection() {
+//   const time = document.getElementById("timeInput").value;
+//   const task = document.getElementById("taskInput").value;
+//   const responsible = document.getElementById("responsibleInput").value;
+//   const status = document.getElementById("statusInput").value;
+//   const id = tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1;
+
+//   const existingTask = tasks.find(t => t.id === id);
+
+//   if (existingTask) {
+//     editTask(id, time, task, responsible, status);
+//   } else {
+//     const newTask = { id, time, task, responsible, status };
+//     tasks.push(newTask);
+//     localStorage.setItem('tasks', JSON.stringify(tasks));
+//     displayTasks();
+//   }
+// }
+
+  
